@@ -1,0 +1,15 @@
+{
+  "name": "gremlintech/onsale",
+  "type": "magento-module",
+  "description": "List Out all on sale products",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Daniel Coull",
+      "email": "ttechitsolutions@gmail.com"
+    }
+  ],
+  "require": {
+    "ecomdev/ecomdev_phpunit": "*"
+  }
+}

@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Gremlintech_OnSale>
+      <version>0.1.0</version>
+    </Gremlintech_OnSale>
+  </modules>
+  <frontend>
+		<layout>
+		  <updates>
+			<onsale>
+			  <file>gremlintech/onsale.xml</file>
+			</onsale>
+		  </updates>
+		</layout>
+      <events>
+        <controller_action_layout_load_before>>
+          <observers>
+            <category_handle_observer>
+              <class>onsale/observer</class>
+              <method>addCategoryNameHandle</method>
+            </category_handle_observer>
+          </observers>
+        </controller_action_layout_load_before>
+      </events>
+  </frontend>
+  <global>
+    <helpers>
+      <onsale>
+        <class>Gremlintech_OnSale_Helper</class>
+      </onsale>
+    </helpers>
+    <models>
+      <onsale>
+        <class>Gremlintech_OnSale_Model</class>
+      </onsale>
+      <catalog>
+        <rewrite>
+          <layer>Gremlintech_OnSale_Model_Catalog_Layer</layer>
+        </rewrite>
+
+      </catalog>
+    </models>
+    <resources>
+      <onsale_setup>
+        <setup>
+          <module>Gremlintech_OnSale</module>
+        </setup>
+      </onsale_setup>
+    </resources>
+
+
+
+	<blocks>
+	  <onsale>
+		<class>Gremlintech_OnSale_Block</class>
+	  </onsale>
+			<catalog>
+				<rewrite>
+					<product_list>Gremlintech_OnSale_Block_Catalog_Product_List</product_list>
+                    <layer_view>Gremlintech_OnSale_Block_Catalog_Layer_View</layer_view>
+				</rewrite>
+			</catalog>
+	</blocks>
+  </global>
+</config> 
